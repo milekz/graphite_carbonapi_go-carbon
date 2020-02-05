@@ -1,6 +1,6 @@
 FROM alpine
 
-RUN apk update && apk add bash git curl wget go make cairo-dev pkgconfig && \
+RUN apk update && apk add bash git curl wget go make cairo-dev pkgconfig supervisor && \
 git clone https://github.com/lomik/go-carbon.git && \
 git clone https://github.com/go-graphite/carbonapi.git && \ 
 cd go-carbon  && \
@@ -12,8 +12,8 @@ make && \
 make install && \
 mkdir -p /var/lib/graphite/whisper && \
 mkdir -p /etc/go-carbon && mkdir -p /etc/carbonapi && \
-adduser -D carbon 
+adduser -D carbon && rm -rf /tmp/* /var/cache/apk/* 
 
-COPY carbonapi.yml /etc/carbonapi
-COPY *.conf /etc/go-carbon
+COPY carbonapi.yml /etc/carbonapi/
+COPY *.conf /etc/go-carbon/
 
