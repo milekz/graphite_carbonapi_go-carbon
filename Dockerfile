@@ -11,6 +11,9 @@ cd carbonapi && \
 make && \
 make install && \
 mkdir -p /var/lib/graphite/whisper && \
-mkdir -p /etc/go-carbon && \
-adduser -D carbon && \
+mkdir -p /etc/go-carbon && mkdir -p /etc/carbonapi && \
+adduser -D carbon 
+
+COPY carbonapi.yml /etc/carbonapi
+COPY *.conf /etc/go-carbon
 
