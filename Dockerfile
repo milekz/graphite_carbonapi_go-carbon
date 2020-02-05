@@ -18,3 +18,5 @@ adduser -D carbon && rm -rf /tmp/* /var/cache/apk/*
 COPY carbonapi.yml /etc/carbonapi/
 COPY *.conf /etc/go-carbon/
 
+EXPOSE 8081 2003 2003/udp 2004
+
