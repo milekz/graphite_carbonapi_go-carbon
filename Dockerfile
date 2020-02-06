@@ -6,12 +6,16 @@ git clone https://github.com/go-graphite/carbonapi.git && \
 cd go-carbon  && \
 make && \
 cp go-carbon /usr/bin && \
+make clean && \
 cd .. && \
 cd carbonapi && \
 make && \
 make install && \
+make clean && \
 mkdir -p /var/lib/graphite/whisper && \
-mkdir -p /etc/go-carbon && mkdir -p /etc/carbonapi && \
+mkdir -p /etc/go-carbon && \
+mkdir -p /etc/carbonapi && \
+mkdir -p /etc/supervisor/conf.d && \
 apk del git go make cairo-dev pkgconfig gcc && \
 adduser -D carbon && rm -rf /tmp/* /var/cache/apk/* 
 
