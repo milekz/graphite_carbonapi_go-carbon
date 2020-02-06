@@ -23,6 +23,8 @@ COPY carbonapi.yml /etc/carbonapi/
 COPY *.conf /etc/go-carbon/
 COPY supervisord /etc/supervisord.conf
 
+VOLUME ["/var/lib/graphite/whisper" ] 
+
 EXPOSE 8081 2003 2003/udp 2004
 
 CMD supervisord -c /etc/supervisor/supervisord.conf
