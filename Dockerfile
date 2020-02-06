@@ -27,4 +27,4 @@ VOLUME ["/var/lib/graphite/whisper"]
 
 EXPOSE 8081 2003 2003/udp 2004
 
-CMD ["/usr/local/bin/supervisord", "-c", "/etc/supervisord.conf"]
+CMD ["supervisord", "-c", "/etc/supervisord.conf"]
