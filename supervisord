@@ -1,4 +1,5 @@
 [supervisord]
+nodaemon = true
 logfile=/dev/strerr ; (main log file;default $CWD/supervisord.log)
 loglevel=info                ; (log level;default info; others: debug,warn,trace)
 
