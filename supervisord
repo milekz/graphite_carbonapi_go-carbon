@@ -1,7 +1,6 @@
 [supervisord]
 nodaemon = true
-user=root
-logfile=/dev/stdout ; (main log file;default $CWD/supervisord.log)
+logfile=/dev/strerr ; (main log file;default $CWD/supervisord.log)
 loglevel=info                ; (log level;default info; others: debug,warn,trace)
 
 [unix_http_server]
@@ -13,12 +12,12 @@ serverurl=unix:///run/supervisord.sock ; use a unix:// URL  for a unix socket
 [program:go-carbon]
 command=/usr/bin/go-carbon -config /etc/go-carbon/go-carbon.conf 
 user=root
-stdout_logfile=/dev/stdout
+stdout_logfile=/dev/strerr
 stderr_logfile=/dev/strerr
 
 
 [program:carbonapi]
 command=/usr/bin/carbonapi -config /etc/carbonapi/carbonapi.yml 
 user=root
-stdout_logfile=/dev/stdout
+stdout_logfile=/dev/strerr
 stderr_logfile=/dev/strerr
