@@ -108,11 +108,11 @@ upstreams:
 
     timeouts:
         # Maximum backend request time for find requests.
-        find: "2s"
+        find: "5s"
         # Maximum backend request time for render requests. This is total one and doesn't take into account in-flight requests
-        render: "10s"
+        render: "15s"
         # Timeout to connect to the server
-        connect: "200ms"
+        connect: "500ms"
 
     # Number of concurrent requests to any given backend - default is no limit.
     # If set, you likely want >= MaxIdleConnsPerHost
