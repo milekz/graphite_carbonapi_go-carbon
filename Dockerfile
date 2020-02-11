@@ -2,7 +2,7 @@ FROM alpine
 
 RUN apk update && apk add bash git go make cairo-dev pkgconfig supervisor && \
 git clone https://github.com/lomik/go-carbon.git && \
-git clone https://github.com/go-graphite/carbonapi.git && \ 
+git clone https://github.com/bookingcom/carbonapi.git && \ 
 cd go-carbon  && \
 make && \
 cp go-carbon /usr/bin && \
