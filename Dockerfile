@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:3.13
 
 RUN apk update && apk add bash git go make cairo-dev pkgconfig supervisor && \
 git clone https://github.com/lomik/go-carbon.git && \
